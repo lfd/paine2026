@@ -73,7 +73,7 @@ def yolo_to_filled_masks(labels_dir, images_dir, output_dir):
 # Beispiel
 if __name__ == "__main__":
     yolo_to_filled_masks(
-        labels_dir="./data/raw/pin_pcb_detection_roboflow/train/labels",
-        images_dir="./data/raw/pin_pcb_detection_roboflow/train/images",
-        output_dir="./data/training/masks"
+        labels_dir="./data/raw/pin_pcb_detection_roboflow/test/labels",
+        images_dir="./data/raw/pin_pcb_detection_roboflow/test/images",
+        output_dir="./data/test/masks"
     )

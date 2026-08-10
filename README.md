@@ -52,7 +52,7 @@ Proposed Method:
                 - The filenames of the image and mask must match
         Output: - Trained UNet model as a .pth file
     4. logreg.ipynb trains a decision model
-        Input: CSV file containing features and ground truth labels (e.g. from pinarea_decision.py using a former joblib file (one can be found in this repsoitory))
+        Input: CSV file containing features and ground truth labels (e.g. from pinarea_decision.py using a former joblib file (one can be found in this repository))
         Output: trained decision model as a joblib file
 
     Inference/Application:
