@@ -13,9 +13,9 @@ import pandas as pd
 from datetime import datetime
 
 # ====== Configuration (edit these) ======
-INPUT_PATH = "./predicted_masks"   # folder or single image path
-OUTPUT_DIR = "./output"
-MODEL_ARTIFACT = "board_passfail_model.joblib"
+INPUT_PATH = "./data/training/masks"   # folder or single image path
+OUTPUT_DIR = "./output/decision_tables"
+MODEL_ARTIFACT = "./models/board_passfail_model.joblib"
 EXTS = (".bmp", ".png", ".jpg", ".jpeg", ".tif", ".tiff")
 # ========================================
 

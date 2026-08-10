@@ -14,11 +14,11 @@ from torch.utils.data import DataLoader
 from fastai.vision.all import *
 
 # ========== Configuration ==========
-INPUT_PATH     = "./input"                          # folder or single image path for inference (e.g., "./input" or "./input/image1.png")
-OUTPUT_DIR     = "./output"                  # output folder for saving prediction masks (will be created if it doesn't exist)
-SKIP_PNG_SAVE  = True                                     # True = no intermediate PNGs saved, False = save original image as PNG in output folder
-MODEL_NAME     = "unet"                        # Name without .pth extension (e.g., "unet" for unet.pth)
-MODEL_DIR      = 'models'                                   # folder, where the model is saved
+INPUT_PATH     = "./data/test/images"                       # folder or single image path for inference (e.g., "./input" or "./input/image1.png")
+OUTPUT_DIR     = "./output/predicted_masks"                 # output folder for saving prediction masks (will be created if it doesn't exist)
+SKIP_PNG_SAVE  = True                                       # True = no intermediate PNGs saved, False = save original image as PNG in output folder
+MODEL_NAME     = "unet_trained"                             # Name without .pth extension (e.g., "unet" for unet.pth)
+MODEL_DIR      = './notebooks/models'                       # folder, where the model is saved
 PATCH_SIZE     = (512, 512)                                 # Patch Size (H, W)
 NUM_CLASSES    = 2                                          # number of classes as in training (n_out=2)
 BATCH_SIZE     = 8                                          # Batch Size for inference (adjust based on GPU memory)
