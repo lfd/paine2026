@@ -10,10 +10,6 @@ __pycache__/
 
 # Modelle
 *.pth
-*.pt
-
-# Ergebnisse
-outputs/
 
 # Python Environments
 .venv/
