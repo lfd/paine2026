@@ -1,14 +1,55 @@
 # paine2026
 Reproduction Package
 
+## Overview
+# Overview
+
+This reproduction package accompanies the paper
+"<Quality Inspection of Printed Circuit Board Pin Insertion via Semantic Segmentation and Board-Level Feature Extraction>".
+
+The proposed approach combines semantic segmentation
+with a decision module for automated pin defect analysis
+of printed circuit board (PCB) images.
+
+The package contains:
+
+- data preprocessing utilities
+- segmentation model training and evaluation notebooks
+- inference scripts for generating prediction masks
+- a trained decision classifier
+- scripts required to reproduce the workflow
+
+A subset of the publicly available dataset used in the
+paper is included. The proprietary industrial dataset
+described in the paper cannot be distributed.
+
+The package demonstrates the inference and decision 
+workflow proposed in the paper. Training and evaluation 
+notebooks are included, while the automated 
+reproduction workflow uses the provided pretrained models.
+
+## Models & Data
+Due to confidentiality agreements with the industrial project partner,
+the PCB image data cannot be released publicly. The repository contains
+all source code, model configurations, and evaluation scripts required
+to reproduce the reported methodology.
+The cited Roboflow data is shared in this repository and can be accessed here: 
+https://universe.roboflow.com/pcbpindetection/pin_pcb_detection
+License of the used Roboflow data: CC BY 4.0
+
 ## Project Structure
 
 main/
+    README.md
+    requirements.txt
+    .gitignore
+    .devcontainer
     notebooks/
         Segmentation.ipynb
         Inference.ipynb
         Model_evaluation.ipynb
         logreg.ipynb
+        models
     src/
         Images_to_Patches.py
         JSON_to_PNG.py
@@ -16,23 +57,69 @@ main/
         pinarea_decision.py
     models/
         board_passfail_model.joblib
+    data/
+        raw/pin_pcb_detection_roboflow
+            test
+                images
+                labels
+            train
+                images 
+                labels
+            valid
+                images
+                labels
+        test
+            images
+            masks
+        training
+            images
+            masks
+    output/
+        decision_tables
+        predicted_masks
+
         
 
 ## Required Packages
 All dependencies can be found in the file:
-requirements2.txt
+requirements.txt
 
 Install:
 pip install -r requirements.txt
 
-## Models & Data
-Due to confidentiality agreements with the industrial project partner,
-the PCB image data cannot be released publicly. The repository contains
-all source code, model configurations, and evaluation scripts required
-to reproduce the reported methodology.
-The cited Roboflow data can be accessed here: https://universe.roboflow.com/pcbpindetection/pin_pcb_detection
+Important are the versions of these packages (as in requirements.txt):
+fastai==2.8.6
+fastcore==1.12.11
+torch==2.9.1
+torchvision==0.24.1
 
-## Reproduction Steps
+## Automated Reproduction
+
+Run in Docker:
+docker build -t paine2026
+
+Run:
+bash run.sh
+
+The script performs:
+
+1. Segmentation inference.
+2. Generation of prediction masks.
+3. Execution of the decision function.
+4. Creation of the final CSV output.
+
+## Expected Outputs
+
+output/
+    predicted_masks
+        001prediction_mask.png
+        002prediction_mask.png
+        ...
+    decision_tables
+        decision_results.csv
+
+
+## Full Workflow Steps
 
 1. Install Dependencies
 pip install -r requirements.txt
