@@ -54,49 +54,54 @@ notebooks/
 
 ## Project Structure
 
+```text
 main/  
-    README.md  
-    requirements.txt  
-    dockerfile.reproduction  
-    run.sh  
-    .gitignore  
-    .devcontainer  
-    notebooks/  
-        Segmentation.ipynb  
-        Inference.ipynb  
-        Model_evaluation.ipynb  
-        logreg.ipynb  
-        models  
-    src/  
-        Images_to_Patches.py  
-        JSON_to_PNG.py  
-        Inference.py  
-        pinarea_decision.py  
-    models/  
-        board_passfail_model.joblib  
-    data/  
-        raw/pin_pcb_detection_roboflow  
-            test  
-                images  
-                labels  
-            train  
-                images   
-                labels  
-            valid  
-                images  
-                labels  
-        test  
-            images  
-            masks  
-        training  
-            images  
-            masks  
-    output/  
-        decision_tables  
-        predicted_masks  
+├──README.md  
+├──requirements.txt  
+├──dockerfile.reproduction  
+├──run.sh  
+├──.gitignore  
+├──.devcontainer  
+├──notebooks/  
+    ├──Segmentation.ipynb  
+    ├──Inference.ipynb  
+    ├──Model_evaluation.ipynb  
+    ├──logreg.ipynb  
+    └──models 
+| 
+├──src/  
+    ├──Images_to_Patches.py  
+    ├──JSON_to_PNG.py  
+    ├──Inference.py  
+    └──pinarea_decision.py  
+|
+├──models/  
+    └──board_passfail_model.joblib  
+|
+├──data/  
+    ├──raw/pin_pcb_detection_roboflow  
+    |    ├──test  
+    |        ├──images  
+    |        └──labels  
+    |    ├──train  
+    |        ├──images   
+    |        └──labels  
+    |    ├──valid  
+    |        ├──images  
+    |        └──labels  
+    ├──test  
+    |    ├──images  
+    |   └──masks  
+    ├──training  
+        ├──images  
+        └──masks 
+| 
+├──output/  
+        ├──decision_tables  
+        └──predicted_masks  
 
+```
 
-        
 
 ## Required Packages
 All dependencies can be found in the file:
